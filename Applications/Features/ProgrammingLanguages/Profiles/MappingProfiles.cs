@@ -1,5 +1,9 @@
 ﻿using Applications.Features.ProgrammingLanguages.Commands.CreateProgrammingLanguageCommand;
+using Applications.Features.ProgrammingLanguages.Commands.DeleteProgrammingLanguageCommand;
+using Applications.Features.ProgrammingLanguages.Commands.UpdateProgrammingLanguageCommand;
 using Applications.Features.ProgrammingLanguages.Dtos;
+using Applications.Features.ProgrammingLanguages.Dtos.Delete;
+using Applications.Features.ProgrammingLanguages.Dtos.Update;
 using Applications.Features.ProgrammingLanguages.Models;
 using AutoMapper;
 using Core.Persistence.Paging;
@@ -21,6 +25,13 @@ namespace Applications.Features.ProgrammingLanguages.Profiles
             CreateMap<IPaginate<ProgrammingLanguage>, ProgrammingLanguageListModel>().ReverseMap();
             CreateMap<ProgrammingLanguage, ProgrammingLanguageListDto>().ReverseMap();
             CreateMap<ProgrammingLanguage, ProgrammingLanguageGetByIdDto>().ReverseMap();
+
+            CreateMap<ProgrammingLanguage, UpdateProgrammingLanguageDto>().ReverseMap();
+            CreateMap<ProgrammingLanguage, UpdateProgrammingLanguageCommand>().ReverseMap();
+
+            CreateMap<ProgrammingLanguage, DeleteProgrammingLanguageCommand>().ReverseMap();
+            CreateMap<DeletedProgrammingLanguageDto, ProgrammingLanguage>().ReverseMap();
+
         }
     }
 }
